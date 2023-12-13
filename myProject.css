@@ -58,9 +58,10 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
 }
+
 .overlay-text a {
     color: white;
     text-decoration: none; /* Optional: remove underline if not needed */
@@ -84,7 +85,6 @@ img {
 .next {
     right: 0;
 }
-
 
 /* Main Content Styles */
 section {
