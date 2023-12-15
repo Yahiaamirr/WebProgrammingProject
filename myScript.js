@@ -27,3 +27,26 @@ setInterval(() => {
 
 // Initialize the slideshow
 showSlides(slideIndex);
+
+   // Add this function to hide the form initially
+   function initForm() {
+    document.getElementById("signupForm").style.display = "none";
+}
+
+function openForm() {
+    document.getElementById("signupForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("signupForm").style.display = "none";
+}
+
+function submitForm() {
+    // Add logic to handle form submission if needed
+    alert("Form submitted!");
+    closeForm(); // Close the form after submission
+    return false; // Prevent the form from actually submitting (for demo purposes)
+}
+
+// Call the initForm function when the page loads
+window.onload = initForm;

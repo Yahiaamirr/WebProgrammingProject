@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Court Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="myProject.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
     <header>
-        <h1>Football Court Booking</h1>
+        <div class="header-top">
+            <h1><span class="icon"><i class="fas fa-futbol"></i></span>Meen In</h1>
+            <div class="header-buttons">
+                <<button class="signup-btn" onclick="openForm()">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>Sign Up
+                </button>
+                
+                
+                <button class="login-btn"><span class="icon"><i class="fa-solid fa-user"></i></span>Login</button>
+            </div>
+        </div>
+
         <nav>
             <ul>
                 <li><a href="myProject.html">Home</a></li>
@@ -18,12 +32,30 @@
             </ul>
         </nav>
     </header>
+    <div id="signupForm" class="form-container">
+        <form action="#" method="post" onsubmit="submitForm()">
+            <label for="Email">Email:</label>
+            <input type="text" id="Email" name="Email" required>
 
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+    
+            <button type="submit">Sign Up</button>
+        </form>
+        <span class="close-btn" onclick="closeForm()">&times;</span>
+    </div>
+    
     <!-- Slideshow Container -->
     <div class="slideshow-container">
         <!-- Slide 1 -->
         <div class="mySlides fade">
-            <img src="bookk.jpg" alt="Football Pitch">
+            <img src="darkk.jpg" alt="Football Pitch">
             <!-- Overlay text -->
             <div class="overlay-text">
                 <a href="booking.html">Book a Court</a>
@@ -38,8 +70,7 @@
                 <a href="courts.html">Courts</a>
             </div>
         </div>
-
-        <!-- Add more slides as needed -->
+     
 
         <!-- Navigation Buttons -->
         <div style="text-align:center">
