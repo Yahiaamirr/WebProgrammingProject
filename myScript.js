@@ -50,3 +50,8 @@ function submitForm() {
 
 // Call the initForm function when the page loads
 window.onload = initForm;
+
+
+function redirectToPage(pageName) {
+    window.location.href = pageName;
+}

@@ -195,3 +195,42 @@ footer {
     bottom: 0;
     width: 100%;
 }
+#g {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: fit-content;
+    border: none;
+}
+div.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    border: none; /* Adjust the gap between grid items */
+    border-color: transparent;
+
+}
+.grid-item {
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+}
+.grid-item img {
+    width: 100%;
+    height: 70vh;
+    transition: transform 0.3s ease-in-out;
+
+}
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+.grid-item p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}

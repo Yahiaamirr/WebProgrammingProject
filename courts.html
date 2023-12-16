@@ -3,30 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courts -Meen In</title>
+    <title>Courts - Meen In</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="myProject.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy60JjZWxIcM70NLN/TD0N5ZBO+XUtPdKZ" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <div id="signupForm" class="form-container">
-            <form action="#" method="post" onsubmit="submitForm()">
-                <label for="Email">Email:</label>
-                <input type="text" id="Email" name="Email" required>
-    
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required>
-                
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-        
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-        
-                <button type="submit">Sign Up</button>
-            </form>
-            <span class="close-btn" onclick="closeForm()">&times;</span>
-        </div>
         <div class="header-top">
             <h1><span class="icon"><i class="fas fa-futbol"></i></span>Meen In</h1>
             <div class="header-buttons">
@@ -48,14 +31,59 @@
     </header>
 
     <section>
-        <h2>Football Courts</h2>
-        <!-- Add content related to football courts -->
-        <p>This is the Courts page. You can provide information about different football courts here.</p>
-    </section>
+        <div id="signupForm" class="form-container">
+            <form action="#" method="post" onsubmit="submitForm()">
+                <label for="Email">Email:</label>
+                <input type="text" id="Email" name="Email" required>
+    
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+        
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+        
+                <button type="submit">Sign Up</button>
+            </form>
+            <span class="close-btn" onclick="closeForm()">&times;</span>
+        </div>
+        
+        <div class="grid-container">
+            <div class="grid-item">
+                <p><strong>Ruya Football court</strong></p>
+                <img src="court1.jpg" alt="Ruya Football court">
+                <button class="Button1" onclick="redirectToPage('booking.html')">Book Court!</button>
+            </div>
+            <div class="grid-item">
+                <p><strong>Beverly Football court</strong></p>
+            <img src="Court2.jpg" alt="Bev football Court">
+            <button class="Button1" onclick="redirectToPage('booking.html')">Book Court!</button>
 
-    <footer>
-        <p>&copy; 2023 Football Court Booking</p>
-    </footer>
-    <script src="myScript.js"></script>
+            </div>
+            <div class="grid-item">
+                <p><strong>Greens Football court</strong></p>
+                <img src="Court3.jpg" alt="Greens football court">
+                <button class="Button1" onclick="redirectToPage('booking.html')">Book Court!</button>
+
+            </div>
+            
+            <div class="grid-item">
+                <p><strong>Aljazeera Football court</strong></p>
+                <img src="Court4.jpg" alt="Aljazeera football court">
+                <button class="Button1" onclick="redirectToPage('booking.html')">Book Court!</button>
+
+            </div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+    
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+           
+        </div>
+        <script src="myScript.js"></script>
+      
 </body>
 </html>
