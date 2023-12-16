@@ -33,12 +33,12 @@
         </nav>
     </header>
     <div id="signupForm" class="form-container">
-        <form action="#" method="post" onsubmit="submitForm()">
-            <label for="Email">Email:</label>
-            <input type="text" id="Email" name="Email" required>
+        <form action="signup.php" method="post" >
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
 
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" required>
             
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
@@ -48,6 +48,7 @@
     
             <button type="submit">Sign Up</button>
         </form>
+
         <span class="close-btn" onclick="closeForm()">&times;</span>
     </div>
     
