@@ -6,80 +6,117 @@
     <title>Football Court Booking</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="myProject.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 <body>
     <header>
+
         <div class="header-top">
-            <h1><span class="icon"><i class="fas fa-futbol"></i></span>Meen In</h1>
+            <h1><span class="icon"><i class="fas fa-futbol"></i></span>Meen mesh in</h1>
             <div class="header-buttons">
-                <<button class="signup-btn" onclick="openForm()">
+                <button class="signup-btn" onclick="openForm()">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>Sign Up
                 </button>
                 
                 
-                <button class="login-btn"><span class="icon"><i class="fa-solid fa-user"></i></span>Login</button>
+                <button class="login-btn" onclick="openLoginForm()">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>Login
+                </button>
             </div>
         </div>
-
+        <div class="header-middle">
+            <p>BOOKING YOUR PITCH HAS NEVER BEEN FASTER</p>
+        </div>
         <nav>
             <ul>
                 <li><a href="myProject.html">Home</a></li>
-                <li><a href="courts.html">Courts</a></li>
                 <li><a href="booking.html">Book a Court</a></li>
                 <li><a href="Profile.html">Profile</a></li>
             </ul>
         </nav>
     </header>
-    <div id="signupForm" class="form-container">
-        <form action="signup.php" method="post" >
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required>
+    <div id="signupForm" class="shared-form-style">
+        <form action="#" method="post" onsubmit="return submitForm()">
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required>
 
-            <label for="name">First Name:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
             
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
     
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+
+
     
-            <button type="submit">Sign Up</button>
+            <button type="submit" class="signupp-btn">Create Account</button>
+            <span class="close-btn" onclick="closeForm()">&times;</span>
+
         </form>
-
-        <span class="close-btn" onclick="closeForm()">&times;</span>
+    </div>
+        
+        <div id="loginForm" class="shared-form-style">
+            <span class="close-btn" onclick="closeLoginForm()">&times;</span>
+            <form action="#" method="post" onsubmit="return submitLoginForm()">
+                <label for="loginUsernameEmail">Username or Email:</label>
+                <input type="text" id="loginUsernameEmail" name="loginUsernameEmail" required>
+        
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+        
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+        
     </div>
     
-    <!-- Slideshow Container -->
-    <div class="slideshow-container">
-        <!-- Slide 1 -->
-        <div class="mySlides fade">
-            <img src="darkk.jpg" alt="Football Pitch">
-            <!-- Overlay text -->
-            <div class="overlay-text">
-                <a href="booking.html">Book a Court</a>
-            </div>
-        </div>
+        <div>
+        <h1>Book Now</h1>
+        
+        <form id="reservationForm" class="reservation-form-style">
+            
+            <label for="day">Choose a date:</label>
+            <input type="text" id="date" placeholder="Select Date" required>
+    
+            <label for="time">Choose a time:</label>
+            <select id="time" required>
+                <option value="9am">9:00 AM</option>
+                <option value="10am">10:00 AM</option>
+                <option value="11am">11:00 AM</option>
+                <option value="12pm">12:00 PM</option>
+                <option value="1pm">1:00 PM</option>
+                <option value="2pm">2:00 PM</option>
+                <option value="3pm">3:00 PM</option>
+                <option value="4pm">4:00 PM</option>
+                <option value="5pm">5:00 PM</option>
+                <option value="6pm">6:00 PM</option>
+                <option value="7pm">7:00 PM</option>
+                <option value="8pm">8:00 PM</option>
+                <option value="9pm">9:00 PM</option>
+                <option value="10pm">10:00 PM</option>            
+    </select>
+    <label for="location">Choose a location:</label>
+    <select id="location" class="js-example-basic-single" required>
+        <option value="" disabled selected>Select Location</option>
+    </select>
+    <button type="button" id="reserveButton">Reserve</button>
+    
 
-        <!-- Slide 2 -->
-        <div class="mySlides fade">
-            <img src="courtt.jpg" alt="Courts">
-            <!-- Overlay text -->
-            <div class="overlay-text">
-                <a href="courts.html">Courts</a>
-            </div>
+        </form>
         </div>
-     
-
-        <!-- Navigation Buttons -->
-        <div style="text-align:center">
-            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-            <button class="next" onclick="plusSlides(1)">&#10095;</button>
-        </div>
-    </div>
-
-    <script src="myScript.js"></script>
-</body>
+       
+        <script src="myScript.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+   <footer>
+    <p>&copy; Meen mesh in</p>
+</footer>
 </html>

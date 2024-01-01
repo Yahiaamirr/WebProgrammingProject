@@ -1,20 +1,38 @@
 <?php
 include("conn.php");
+session_start();
+
 $error = "";
-$name= $_POST["name"];
-$password= $_POST["password"];
-$sql = "SELECT * FROM users WHERE username = '$name' AND password='$password'";
-$result = mysqli_query($con, $sql);
+$name = $_POST["name"];
+$password = $_POST["password"];
 
-if(mysqli_num_rows($result)>0){
-    session_start();
-    
-    $arr=mysqli_fetch_array($result);
-    $_SESSION['id']=$arr['id'];
-    header("Location: https://www.youtube.com/"); 
-    exit();
+// Use prepared statements to prevent SQL injection
+$stmt = $con->prepare("SELECT id, username, password FROM users WHERE username = ?");
+$stmt->bind_param("s", $name);
+$stmt->execute();
+$result = $stmt->get_result();
 
-}else echo $error = "Invalid username or password.";
+if ($result->num_rows > 0) {
+    $arr = $result->fetch_assoc();
 
+    // Verify password using password_verify
+    if (password_verify($password, $arr['password'])) {
+        $_SESSION['id'] = $arr['id'];
+        $_SESSION['username'] = $arr['username'];
 
+        // Redirect to a welcome page using JavaScript
+        echo '<script>';
+        echo 'alert("Welcome back, ' . $arr['username'] . '!");';
+        echo 'window.location.href = "myProject.html";'; // Replace "welcome.php" with your actual welcome page
+        echo '</script>';
+        exit();
+    } else {
+        $error = "Invalid username or password.";
+    }
+} else {
+    $error = "Invalid username or password.";
+}
+
+echo $error;
 ?>
+
